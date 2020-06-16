@@ -2,23 +2,6 @@ version: '2.1'
 
 services:
 
-  https-portal:
-    image: steveltn/https-portal:1.7.3
-    container_name: https
-    volumes:
-      - ./logs/nginx:/var/log/nginx
-    ports:
-      - '80:80'
-      - '443:443'
-    environment:
-      CLIENT_MAX_BODY_SIZE: '100M'
-      GZIP: 'on'
-      DOMAINS: '{{ domain }} -> http://wordpress:80'
-      STAGE: '{{ stage }}'
-    restart: unless-stopped
-    networks:
-      - wp
-
   wordpress:
     depends_on:
       db:
@@ -38,6 +21,8 @@ services:
     restart: unless-stopped
     networks:
       - wp
+    ports:
+      - '80:80'
 
   db:
     image: mysql:5.7
