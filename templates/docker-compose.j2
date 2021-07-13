@@ -10,7 +10,7 @@ services:
     image: wordpress:{{ wp_version }}-apache
     container_name: wp
     volumes:
-      - ./wordpress:/var/www/html
+#      - ./wordpress:/var/www/html
       - ./wordpress/uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     environment:
       WORDPRESS_DB_USER: '{{ wp_db_user }}'
