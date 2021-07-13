@@ -27,8 +27,6 @@ services:
   db:
     image: mysql:5.7
     container_name: db
-    volumes:
-      - ./wp-db-data:/var/lib/mysql
     healthcheck:
       test: "/usr/bin/mysql --user=root --password='{{ wp_db_psw }}' --execute \"SHOW DATABASES;\""
       interval: 2s
