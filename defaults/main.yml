@@ -2,6 +2,7 @@
 # defaults file for wordpress-docker
 system_user: ubuntu
 compose_project_dir: /home/{{ system_user }}/compose-wordpress
+compose_binary_dir: /usr/local/bin
 domain: foolcontrol.org
 stage: staging
 wp_version: 5.2.4
