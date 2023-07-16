@@ -36,7 +36,8 @@
     mode: 0644
 
 - name: Run docker-compose up
-  command: docker-compose -f docker-compose.yml up -d
+  command:
+    cmd: "{{ compose_binary_dir }}/docker-compose -f docker-compose.yml up -d"
   args:
     chdir: "{{ compose_project_dir }}"
 
