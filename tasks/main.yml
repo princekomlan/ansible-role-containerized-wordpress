@@ -37,7 +37,7 @@
 
 - name: Run docker-compose up
   command:
-    cmd: "/usr/libexec/docker/cli-plugins/docker-compose -f docker-compose.yml up -d"
+    cmd: "docker compose -f docker-compose.yml up -d"
   args:
     chdir: "{{ compose_project_dir }}"
 
