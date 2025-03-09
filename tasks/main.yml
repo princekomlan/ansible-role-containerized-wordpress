@@ -39,7 +39,7 @@
   command:
     cmd: "docker compose -f docker-compose.yml up -d"
   args:
-    chdir: "{{ compose_project_dir }}"
+    chdir: "/usr/libexec/docker/cli-plugins/docker-compose"
 
 - name: Waiting for all containers to start up and {{ domain }} to be accessible
   wait_for:
